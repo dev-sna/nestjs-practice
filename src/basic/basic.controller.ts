@@ -2,7 +2,7 @@ import { Controller, Get, Post, Put, Req, Res, Delete } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 // * indicates wild card
-@Controller('ca*ts')
+@Controller('bas*ic')
 export class BasicController {
   @Get()
   getHello(): string {
