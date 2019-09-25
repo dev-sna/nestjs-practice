@@ -5,4 +5,4 @@ import { AdvancedController } from './advanced.controller';
   imports: [],
   controllers: [AdvancedController],
 })
-export class BasicModule {}
+export class AdvancedModule {}
