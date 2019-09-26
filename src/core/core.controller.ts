@@ -3,7 +3,7 @@ import { Controller, Get } from '@nestjs/common';
 @Controller('core')
 export class CoreController {
   @Get()
-  getDate() {
+  getData() {
     return 'Core module';
   }
 }
