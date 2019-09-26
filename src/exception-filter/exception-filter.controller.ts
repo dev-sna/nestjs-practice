@@ -1,4 +1,8 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import {
+  ExceptionFilter,
+  Status,
+} from '../utils/exception-helpers/exceptionFilter.helper';
 
 @Controller('exception-filter')
 export class ExceptionFilterController {
@@ -16,5 +20,10 @@ export class ExceptionFilterController {
       },
       403,
     );
+  }
+
+  @Get('custom')
+  custom() {
+    throw new ExceptionFilter('Bad request', Status.BAD_REQUEST);
   }
 }
