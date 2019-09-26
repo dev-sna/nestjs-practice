@@ -6,4 +6,15 @@ export class ExceptionFilterController {
   basic() {
     throw new HttpException('Hala', HttpStatus.FORBIDDEN);
   }
+
+  @Get('object')
+  object() {
+    throw new HttpException(
+      {
+        status: HttpStatus.FORBIDDEN,
+        error: 'Some random error',
+      },
+      403,
+    );
+  }
 }
