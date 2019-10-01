@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { Item } from './pipecontroller.interfaces';
+import { Car } from './pipecontroller.interfaces';
 
 @Injectable()
 export class PipeControllerService {
-  private items: Array<Item>;
+  private cars: Array<Car> = [];
 
-  createItem(item: Item) {
-    this.items.push(item);
+  createCar(item: Car) {
+    this.cars.push(item);
   }
 
-  getItems() {
-    return this.items;
+  getCars() {
+    return this.cars;
   }
 }

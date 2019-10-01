@@ -1,4 +1,4 @@
-export class CreateItemDTO {
+export class CreateCarDTO {
   readonly name: string;
   readonly price: number;
 }
