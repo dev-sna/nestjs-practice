@@ -7,6 +7,8 @@ import { validate } from 'class-validator';
 import { plainToClass } from 'class-transformer';
 
 export class ClassValidatorPipe implements PipeTransform<any> {
+  // metatype here is the data that is used to validate provided data
+  // value is the provided data
   async transform(value: any, { metatype }: ArgumentMetadata) {
     if (!metatype || !this.toValidate(metatype)) {
       return value;
