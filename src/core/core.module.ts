@@ -5,7 +5,7 @@ import {
   RequestMethod,
 } from '@nestjs/common';
 import { CoreController } from './core.controller';
-import { LoggerMiddleware } from '../middleware/login.middleware';
+import { LoggerMiddleware } from '../middleware/logger.middleware';
 
 @Module({
   controllers: [CoreController],
