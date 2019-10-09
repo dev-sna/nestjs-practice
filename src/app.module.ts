@@ -5,6 +5,8 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { ExceptionFilterController } from './exception-filter/exception-filter.controller';
 import { PipeControllerController } from './pipecontroller/pipecontroller.controller';
 import { PipeControllerService } from './pipecontroller/pipecontroller.service';
+import { ApiController } from './api/api.controller';
+import { ApiService } from './api/api.service';
 
 @Module({
   imports: [BasicModule],
@@ -12,8 +14,9 @@ import { PipeControllerService } from './pipecontroller/pipecontroller.service';
     AdvancedController,
     ExceptionFilterController,
     PipeControllerController,
+    ApiController,
   ],
-  providers: [PipeControllerService],
+  providers: [PipeControllerService, ApiService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
