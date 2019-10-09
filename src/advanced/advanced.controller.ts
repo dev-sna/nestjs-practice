@@ -11,11 +11,15 @@ import {
   Param,
   Header,
   Redirect,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateItemDTO } from './dto/create-item.dto';
 import { NextFunction } from 'express';
+import { Roles } from '../utils/decorators/roles.decorator';
+import { RolesGuard } from '../utils/guards/basic-roles.guard';
 
 @Controller('advanced')
+@UseGuards(RolesGuard)
 export class AdvancedController {
   @Redirect('http://localhost/advanced/target', 302)
   @Get('direct')
@@ -59,6 +63,7 @@ export class AdvancedController {
   }
 
   @Post('create')
+  @Roles('admin')
   createItem(@Body() createItem: CreateItemDTO) {
     return `Item name: ${createItem.name}, description: ${
       createItem.description
