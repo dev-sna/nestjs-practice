@@ -7,10 +7,10 @@ import { createUserSchema } from './schemas/validation/user-validation.schema';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post('login')
+  @Post('register')
   @UsePipes(new JoiValidationPipe(createUserSchema))
   // for validation to work, we have use @Body decorator
-  login(@Body() createUserDTO) {
-    console.log('LOGIN');
+  register(@Body() createUserDTO) {
+    this.userService.createUser(createUserDTO);
   }
 }
